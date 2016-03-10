@@ -67,7 +67,7 @@ if __name__ == "__main__":
     print("Matrix b:") 
     print(b)   
     print(" ")
-    sol = solve(A,b)
+    sol =np.linalg.solve(A,b)
     print(sol)
     
     A = np.array([[6566, -5202, -4040, -5224, 1420, 6229],
