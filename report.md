@@ -13,12 +13,10 @@ The reports, codes and supporting documents are to be uploaded to Github at:
 https://github.com/Huizhonglee/UECM3033_assign2
 
 Explain your selection criteria here.
+The condition of SOR method is Matrix must be positive definite so it will only convergence. However, a matrix is positive definite if all the eigenvalues of matrix are positive.
 
 Explain how you implement your `task1.py` here.
-
-At first, 
-
-For SOR method, I used ?¦Ø=1.25. A positive ¦Ø can help us to get convergence. SOR method can convergence only when 0< ¦Ø<2. The SOR method will reduce to the Gauss Seidel method when ¦Ø=1. With 0< ¦Ø<1, it called as under-relaxation methods while w>1 called as over relaxation methods. So, we can choose ¦Ø between 1 and 2. For certain problems, SOR method will be very effective.
+At first, I used self-defined functions to solve the question. Two methods used to solve the problem is LU factorisation and Successive Over-relaxation(SOR) method.For SOR method, I used ?a formula based on convergence theorem to determine optimal¦Ø. A positive ¦Ø can help us to get convergence. SOR method can convergence only when 0< ¦Ø<2. The SOR method will reduce to the Gauss Seidel method when ¦Ø=1. With 0< ¦Ø<1, it called as under-relaxation methods while ¦Ø >1 called as over relaxation methods. So, we can choose ¦Ø between 1 and 2. For certain problems, SOR method will be very effective. ¡°np.linalg.solve(A,b)¡± function is used to solve linear equation and computes a ¡°exact¡± solution.
 
 The answer for 1st linear system will be [1 1 1]. For the 2nd linear system is [ 1.  -1.   4.  -3.5  7.  -1. ]. These answers had checked by using online matrix calculator. The answers obtained are same for both linear systems.
 
@@ -31,13 +29,13 @@ Put here your picture file (photo1.tiff)
 
 ![photo1.tiff](photo1.tiff)
 
-How many non zero element in $\Sigma$?
+How many non zero element in $\Sigma$? All elements in $\Sigma$ is non zero
 
 Put here your lower and better resolution pictures. Explain how you generate
 these pictures from `task2.py`.
 
 What is a sparse matrix?
-A?matrix?in which number of zero entries are much higher than the number of non zero entries is called sparse matrix. 
+A matrix in which numbers of zero entries are much higher than the number of non-zero entries is called sparse matrix. Sparse matrices are stored using special data structure. Sparse matrix has small number of non-zero entries. These non-zeros encode connectivity such as Hyperlinks, Social Network and so on.  
 -----------------------------------
 
 <sup>last modified: 11/3/2016</sup>

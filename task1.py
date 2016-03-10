@@ -23,21 +23,36 @@ def lu(A,b):
 
 def sor(A, b):
     sol = []
-    omega=1.25
+    L = -1*np.tril(A,-1)
+    D = np.diag(np.diag(A))
+    U = -1*np.triu(A,1)
     
+    kj = np.linalg.inv(D).dot(L+U)
+    p = max(abs(i) for i in np.linalg.eigvals(kj))
+    omega= 2*(1-np.sqrt(1-p**2))/(p**2) #formula of optimum omega
+
     x = np.zeros_like(b)
     for itr in range(ITERATION_LIMIT):
      for i in range(len(b)):
         sums = np.dot( A[i,:], x )
         x[i] = x[i] + omega*(b[i]-sums)/A[i,i]
     return list(sol)
+    
 
+      
 def solve(A, b):
-    condition = np.count_nonzero(A)>1/2*len(A)
-    if condition:
+    
+ if (np.all(np.linalg.eigvals(A) > 0)):
+     c=1
+ else:
+     c=0
+     
+ if (c == 0): 
         print('Solve by LU(A,b)')
         return lu(A,b)
-    else:
+        
+    
+ else:
         print('Solve by sor(A,b)')
         return sor(A,b)
 
