@@ -27,15 +27,17 @@ Put here your picture file (photo1.tiff)
 
 ![photo1.tiff](photo1.tiff)
 
-How many non zero element in $\Sigma$? All elements in $\Sigma$ is non zero
+How many non zero element in $\Sigma$? All elements which are 800 in $\Sigma$ is non zero
 
 Put here your lower and better resolution pictures. Explain how you generate
 these pictures from `task2.py`.
-Lower resolution picture (photo_200.png)
-![photo_200.png](photo_200.png)
+Lower resolution picture (photo1_200.png)
+![photo1_200.png](photo1_200.png)
 
-Better resolution picture.(photo_30.png)
-![photo_30.png](photo_30.png)
+Better resolution picture.(photo1_30.png)
+![photo1_30.png](photo1_30.png)
+
+Firstly, read the¡°photo1.tiff¡±picture and save it as img.Then,U, Sigma and V of three colour matrices can be find using linalg.svd function. Three zero matrices are created by using np.zeros_like function and keep the first 30 non zero elements into each of the matrices.  To get a new matrix, I use dot product to multiply new matrices S_red_new with another 2 red U,V matrix. Do the same for another 2 colour. A lower resolution image is produced. The steps above are repeated to get 200 better resolution picture.
 
 What is a sparse matrix?
 A matrix in which numbers of zero entries are much higher than the number of non-zero entries is called sparse matrix. Sparse matrices are stored using special data structure. Sparse matrix has small number of non-zero entries. These non-zeros encode connectivity such as Hyperlinks, Social Network and so on. 

@@ -8,29 +8,29 @@ img=mpimg.imread('photo1.tiff')
 [r,g,b] = [img[:,:,i] for i in range(3)]
 
 
-U_red,s_red,Vh_red = sp.svd(r,False,True,False,True)
-s_red = np.diag(s_red)
+U_r,s_r,V_r = sp.svd(r,False,True,False,True)
+s_r = np.diag(s_r)
 
-U_green,s_green,Vh_green = sp.svd(g,False,True,False,True)
-s_green = np.diag(s_green)
+U_g,s_g,V_g = sp.svd(g,False,True,False,True)
+s_g = np.diag(s_g)
 
-U_blue,s_blue,Vh_blue = sp.svd(b,False,True,False,True)
-s_blue = np.diag(s_blue)
+U_b,s_b,V_b = sp.svd(b,False,True,False,True)
+s_b = np.diag(s_b)
 
-print("The no. of non zero elements in sigma of red, green, blue are", len(s_red),"," ,len(s_green),"and" ,len(s_blue), "respectively.")
+print("The no. of non zero elements in sigma of red, green, blue are", len(s_r),"," ,len(s_g),"and" ,len(s_r), "respectively.")
 
 
-s_red_new = np.zeros_like(s_red)
-s_red_new[0:30] = s_red[0:30]
-r_new = U_red@s_red_new@Vh_red
+s_red_new = np.zeros_like(s_r)
+s_red_new[0:30] = s_r[0:30]
+r_new = U_r@s_red_new@V_r
 
-s_green_new = np.zeros_like(s_green)
-s_green_new[0:30] = s_green[0:30]
-g_new = U_green.dot(s_green_new).dot(Vh_green)
+s_green_new = np.zeros_like(s_g)
+s_green_new[0:30] = s_g[0:30]
+g_new = U_g.dot(s_green_new).dot(V_g)
 
-s_blue_new = np.zeros_like(s_blue)
-s_blue_new[0:30] = s_blue[0:30]
-b_new = U_blue.dot(s_blue_new).dot(Vh_blue)
+s_blue_new = np.zeros_like(s_b)
+s_blue_new[0:30] = s_b[0:30]
+b_new = U_b.dot(s_blue_new).dot(V_b)
 
 img[:,:,0] = r_new
 img[:,:,1] = g_new
@@ -48,17 +48,17 @@ ax4.imshow(b_new, cmap = 'Blues')
 
 plt.show()
 
-s_red_new = np.zeros_like(s_red)
-s_red_new[0:200] = s_red[0:200]
-rnew = U_red@s_red_new@Vh_red
+s_red_new = np.zeros_like(s_r)
+s_red_new[0:200] = s_r[0:200]
+r_new = U_r@s_red_new@V_r
 
-s_green_new = np.zeros_like(s_green)
-s_green_new[0:200] = s_green[0:200]
-g_new = U_green.dot(s_green_new).dot(Vh_green)
+s_green_new = np.zeros_like(s_g)
+s_green_new[0:200] = s_g[0:200]
+g_new = U_g.dot(s_green_new).dot(V_g)
 
-s_blue_new = np.zeros_like(s_blue)
-s_blue_new[0:200] = s_blue[0:200]
-b_new = U_blue.dot(s_blue_new).dot(Vh_blue)
+s_blue_new = np.zeros_like(s_b)
+s_blue_new[0:200] = s_b[0:200]
+b_new = U_b.dot(s_blue_new).dot(V_b)
 
 
 img[:,:,0] = r_new
