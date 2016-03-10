@@ -16,20 +16,13 @@ Explain your selection criteria here.
 
 Explain how you implement your `task1.py` here.
 
-At first, 
-
-For SOR method,I used ?¦Ø=1.25. A positive ¦Ø can help us to get convergence. SOR method can convergence only when 0< ¦Ø<2. With 0< ¦Ø<1, it called as under-relaxation methods while w>1 called as over relaxation methods.So, we can choose ¦Ø between 1 and 2. For certain problems, SOR method will be very effective.
-
-The answer for 1st linear system will be [1 1 1]. For the 2nd linear system is
-
-
 ---------------------------------------------------------
 
 ## Task 2 -- SVD method and image compression
 
-Put here your picture file (photo1.png)
+Put here your picture file (Lenna.png)
 
-![photo1.png](photo1.png)
+![Lenna.png](Lenna.png)
 
 How many non zero element in $\Sigma$?
 
