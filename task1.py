@@ -68,5 +68,5 @@ if __name__ == "__main__":
     print("Matrix d:") 
     print(b)    
     print(" ")
-    sol = solve(A,b)
+    sol = np.linalg.solve(A,b)
     print(sol)
